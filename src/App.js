@@ -15,12 +15,12 @@ class App extends React.Component{
     this.state = {
       loading : true,
       info : [],
-      url : "https://api.spacexdata.com/v3/launches?limit=100"
+      url : " "
     }
   }
 
   componentDidMount(){ 
-    fetch(this.state.url)
+    fetch("https://api.spacexdata.com/v3/launches?limit=100")
     .then((response) => response.json())
     .then(info => this.setState({
     info: info,
@@ -33,14 +33,14 @@ class App extends React.Component{
     this.setState({
       // loading:true,
       url: e.target.value
-    })
+    },()=>{
     this.getURL();
+    });
   }
 
    getURL = () =>{
 
-    console.log("searching...", this.state.url)
-
+    window.history.pushState({},"","http://localhost:3000/"+this.state.url.slice(8));
     fetch(this.state.url)
       .then((response) => response.json())
       .then(info => this.setState({
@@ -70,7 +70,7 @@ class App extends React.Component{
             
         
       <span>
-        <NavBar onChange = {this.handleChange}/>
+        <NavBar/>
         <Filter onChange = {this.handleChange} />
       </span>
         
