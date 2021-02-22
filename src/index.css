@@ -128,3 +128,26 @@ h3{
 .footer p{
   color: white;
 }
+
+.modal-content{
+  background-color: #000000;
+  color:wheat;
+  box-shadow: 5px 7px 14px wheat;
+  text-align: center;
+}
+
+.modal-content img{
+  width:200px;
+  height: 200px;
+  left:30%;
+  margin-top:10%;
+  position: relative;
+}
+
+.modal-body p{
+  color: white;
+}
+
+.modal-body h5:hover{
+  text-decoration: underline;
+}

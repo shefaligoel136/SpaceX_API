@@ -1,6 +1,9 @@
 import React, { Fragment } from 'react';
 import './App.css';
 import 'font-awesome/css/font-awesome.min.css';
+import Noty from 'noty';  
+import "../node_modules/noty/lib/noty.css";  
+import "../node_modules/noty/lib/themes/mint.css";  
 import { Card } from './components/Card'
 import { Modal } from './components/Modal';
 import { Filter } from './components/Filter';
@@ -31,15 +34,22 @@ class App extends React.Component{
 
   handleChange = (e) => {
     this.setState({
-      // loading:true,
       url: e.target.value
     },()=>{
     this.getURL();
     });
   }
 
-   getURL = () =>{
+  showNoty = () =>{
+    new Noty({
+      type: "alert",
+      text: "Your data has been updated",
+      timeout: 3000
+    }).show();
+  }
 
+   getURL = () =>{
+    this.showNoty();
     window.history.pushState({},"","http://localhost:3000/"+this.state.url.slice(8));
     fetch(this.state.url)
       .then((response) => response.json())
