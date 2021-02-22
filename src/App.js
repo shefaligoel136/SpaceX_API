@@ -50,7 +50,7 @@ class App extends React.Component{
 
    getURL = () =>{
     this.showNoty();
-    window.history.pushState({},"","http://localhost:3000/"+this.state.url.slice(8));
+    // window.history.pushState({},"","http://localhost:3000/"+this.state.url.slice(8));
     fetch(this.state.url)
       .then((response) => response.json())
       .then(info => this.setState({
