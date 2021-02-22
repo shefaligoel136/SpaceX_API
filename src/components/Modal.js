@@ -5,7 +5,7 @@ export const Modal = (prop) =>(
             <img src={prop.info.links.mission_patch_small} className="card-img-top" alt="..."/>
                 <div className="modal-header">
                     {/* <h5 className="modal-title" id="mission-name" >{prop.info.mission_name}</h5> */}
-                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" style={{color:"white",top:"3%",right:"5%",position:"absolute"}}>X</button>
                 </div>
                 <div className="row modal-body">
                     <div className="col-sm-4">
